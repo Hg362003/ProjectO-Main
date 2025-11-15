@@ -2,6 +2,7 @@
 import { Bell, Briefcase, Home, MessageSquare, Users2 } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { Separator } from './ui/separator'
 import { useUser } from '@/hooks/useUserSession'
@@ -14,7 +15,10 @@ function Navbar() {
         <div className="sticky top-0 left-0 z-50 flex items-center justify-center w-full p-5 border-b shadow-sm bg-amber-500">
             <div className="flex items-center justify-around flex-1">
                 <div className="flex items-center gap-8">
-                    <Link href={"/"} className="text-3xl font-black">Nexify</Link>
+                    <Link href={"/"} className="flex items-center gap-3">
+                        <Image src="/Logo.png" alt="Projecto Logo" width={40} height={40} className="object-contain" />
+                        <span className="text-3xl font-black">ProjectO</span>
+                    </Link>
                 </div>
 
                 <div className="flex items-center gap-6">

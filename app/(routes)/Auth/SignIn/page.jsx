@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import Image from 'next/image';
 
 function SignIn() {
   const [rollno, setRollNo] = useState('');
@@ -45,9 +46,12 @@ function SignIn() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen gap-10">
       <div className="flex flex-col items-center justify-center w-1/4 gap-10">
-        <div className="flex flex-col items-start w-full gap-2">
-          <h1 className="text-6xl font-black">Nexify</h1>
-          <p>Welcome Back! Please Sign In to Continue.</p>
+        <div className="flex flex-col items-center w-full gap-4">
+          <Image src="/Logo.png" alt="Projecto Logo" width={80} height={80} className="object-contain" />
+          <div className="flex flex-col items-start w-full gap-2">
+            <h1 className="text-6xl font-black">ProjectO</h1>
+            <p>Welcome Back! Please Sign In to Continue.</p>
+          </div>
         </div>
         <form onSubmit={handleSignIn} className="flex flex-col w-full gap-6">
           <div className="flex flex-col gap-3">

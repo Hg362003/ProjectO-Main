@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
+import Image from "next/image";
 
 function Page() {
   const [email, setEmail] = useState("");
@@ -46,9 +47,12 @@ function Page() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen gap-10">
       <div className="flex flex-col items-center justify-center w-1/4 gap-10">
-        <div className="flex flex-col items-start w-full gap-2">
-          <h1 className="text-6xl font-black">Forgot Password</h1>
-          <p>Please enter your email to receive an OTP for password reset.</p>
+        <div className="flex flex-col items-center w-full gap-4">
+          <Image src="/Logo.png" alt="Projecto Logo" width={80} height={80} className="object-contain" />
+          <div className="flex flex-col items-start w-full gap-2">
+            <h1 className="text-6xl font-black">Forgot Password</h1>
+            <p>Please enter your email to receive an OTP for password reset.</p>
+          </div>
         </div>
 
         <form className="flex flex-col w-full gap-6">

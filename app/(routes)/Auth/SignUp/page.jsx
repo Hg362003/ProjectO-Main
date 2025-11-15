@@ -7,6 +7,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import Image from 'next/image';
 
 function SignUp() {
   const router = useRouter(); // Move useRouter() here
@@ -64,9 +65,12 @@ function SignUp() {
   return (
     <div className="flex flex-col items-center justify-center w-full h-screen gap-10">
       <div className="flex flex-col items-center justify-center w-1/4 gap-10">
-        <div className="flex flex-col items-start w-full gap-2">
-          <h1 className="text-6xl font-black">Nexify</h1>
-          <p>Welcome! Please Sign Up to Continue.</p>
+        <div className="flex flex-col items-center w-full gap-4">
+          <Image src="/Logo.png" alt="Projecto Logo" width={80} height={80} className="object-contain" />
+          <div className="flex flex-col items-start w-full gap-2">
+            <h1 className="text-6xl font-black">ProjectO</h1>
+            <p>Welcome! Please Sign Up to Continue.</p>
+          </div>
         </div>
         <form onSubmit={handleSignUp} className="flex flex-col w-full gap-6">
           <div className="flex flex-col gap-3">

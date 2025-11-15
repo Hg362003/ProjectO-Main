@@ -43,8 +43,24 @@ export async function POST(req, res) {
   } catch (error) {
     console.error("Error during user creation:", error);
 
+    // Check if it's a database connection error
+    if (error.name === 'PrismaClientInitializationError' || error.message?.includes('database connection')) {
+      return NextResponse.json(
+        { message: "Database connection failed. Please check your network connection and MongoDB Atlas settings.", error: "Connection error" },
+        { status: 503 } // Service Unavailable
+      );
+    }
+
+    // Check if it's a unique constraint violation
+    if (error.code === 'P2002') {
+      return NextResponse.json(
+        { message: "User with this email, roll number, or mobile number already exists" },
+        { status: 409 } // Conflict
+      );
+    }
+
     return NextResponse.json(
-      { message: "Internal Server Error", error: error.message },
+      { message: error.message || "Internal Server Error", error: error.message },
       { status: 500 } // Internal Server Error
     );
   }

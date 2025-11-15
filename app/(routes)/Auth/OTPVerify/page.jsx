@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/input-otp"
 import React from 'react'
 import { usePathname, useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 function page() {
 
@@ -23,9 +24,12 @@ function page() {
     return (
         <div className="flex flex-col items-center justify-center w-full h-screen gap-10">
             <div className="flex flex-col items-center justify-center w-1/4 gap-10">
-                <div className="flex flex-col items-start w-full gap-2">
-                    <h1 className="text-6xl font-black">OTP Verification</h1>
-                    <p>Please Enter The OTP Sent To Your Email To Verify Your Identity.</p>
+                <div className="flex flex-col items-center w-full gap-4">
+                    <Image src="/Logo.png" alt="Projecto Logo" width={80} height={80} className="object-contain" />
+                    <div className="flex flex-col items-start w-full gap-2">
+                        <h1 className="text-6xl font-black">OTP Verification</h1>
+                        <p>Please Enter The OTP Sent To Your Email To Verify Your Identity.</p>
+                    </div>
                 </div>
 
                 <form className="flex flex-col w-full gap-6">
